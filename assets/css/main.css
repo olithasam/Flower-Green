@@ -1,15 +1,4 @@
-/**
-* Template Name: ZenBlog
-* Template URL: https://bootstrapmade.com/zenblog-bootstrap-blog-template/
-* Updated: Aug 08 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
---------------------------------------------------------------*/
 /* Fonts */
 :root {
   --default-font: "EB Garamond",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -143,7 +132,7 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: #f2f2f2;
+  --background-color:  #f2f2f2;
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 10px 0;
@@ -151,21 +140,6 @@ h6 {
   z-index: 997;
 }
 
-.header .logo {
-  line-height: 1;
-}
-
-.header .logo img {
-  max-height: 36px;
-  margin-right: 8px;
-}
-
-.header .logo h1 {
-  font-size: 30px;
-  margin: 0;
-  font-weight: 500;
-  color: var(--heading-color);
-}
 
 .header .header-social-links {
   padding-right: 15px;
@@ -176,7 +150,7 @@ h6 {
   padding-left: 6px;
   display: inline-block;
   transition: 0.3s;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .header .header-social-links a:hover {
@@ -251,7 +225,7 @@ h6 {
   .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
-    color: var(--nav-hover-color);
+    color: rgb(3, 160, 0);
   }
 
   .navmenu .dropdown ul {
@@ -288,7 +262,7 @@ h6 {
   .navmenu .dropdown ul a:hover,
   .navmenu .dropdown ul .active:hover,
   .navmenu .dropdown ul li:hover>a {
-    color: var(--nav-dropdown-hover-color);
+    color: rgb(3, 160, 0);
   }
 
   .navmenu .dropdown:hover>ul {
@@ -380,13 +354,13 @@ h6 {
   .navmenu a:hover,
   .navmenu .active,
   .navmenu .active:focus {
-    color: var(--nav-dropdown-hover-color);
+    color: rgb(3, 160, 0);
   }
 
   .navmenu .active i,
   .navmenu .active:focus i {
     background-color: var(--accent-color);
-    color: var(--contrast-color);
+    color: rgb(3, 160, 0);
     transform: rotate(180deg);
   }
 
@@ -408,7 +382,7 @@ h6 {
 
   .navmenu .dropdown>.dropdown-active {
     display: block;
-    background-color: rgba(33, 37, 41, 0.03);
+    background-color: rgba(0, 0, 0, 0.03);
   }
 
   .mobile-nav-active {
@@ -451,24 +425,6 @@ h6 {
 .footer .footer-top {
   padding-top: 50px;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-}
-
-.footer .footer-about .logo {
-  line-height: 1;
-  margin-bottom: 25px;
-}
-
-.footer .footer-about .logo img {
-  max-height: 40px;
-  margin-right: 6px;
-}
-
-.footer .footer-about .logo span {
-  color: var(--heading-color);
-  font-family: var(--heading-font);
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: 1px;
 }
 
 .footer .footer-about p {
@@ -730,63 +686,31 @@ section,
 /*--------------------------------------------------------------
 # Slider Section
 --------------------------------------------------------------*/
-.slider {
-  background-color: transparent;
-}
-
-.slider .swiper-pagination .swiper-pagination-bullet {
-  background-color: color-mix(in srgb, var(--default-color) 90%, white 15%);
-}
-
-.slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
-}
-
-.slider .swiper-wrapper {
-  height: auto !important;
-}
-
-.slider .swiper-slide {
-  min-height: 500px;
+/* Hero Cover Section */
+.hero-cover {
   position: relative;
-  display: flex;
-  align-items: flex-end;
-  background-repeat: no-repeat;
-  background-size: cover;
+  width: 100%;
+  overflow: hidden;
 }
 
-.slider .swiper-slide::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: color-mix(in srgb, var(--background-color), transparent 50%);
+.hero-image {
+  width: auto;
+  height: auto; /* Full viewport height */
+  min-height: 600;
+  max-width: 1172px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
+
+
 
 @media (max-width: 575px) {
-  .slider .swiper-slide {
+  .hero-image {
     min-height: 300px;
+    height: 60vh;
   }
-}
-
-.slider .swiper-button-prev:after,
-.slider .swiper-button-next:after {
-  font-size: 24px;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-}
-
-.slider .content {
-  padding: 60px 80px;
-  max-width: 700px;
-  position: relative;
-}
-
-.slider .content a,
-.slider .content h2,
-.slider .content p {
-  color: var(--default-color);
 }
 
 /*--------------------------------------------------------------
