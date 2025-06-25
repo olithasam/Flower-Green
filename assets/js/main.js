@@ -113,3 +113,39 @@
   window.addEventListener("load", initSwiper);
 
 })();
+
+document.addEventListener('DOMContentLoaded', function() {
+  const forms = document.querySelectorAll('.formspree-form');
+  
+  forms.forEach(form => {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      // Reset form state
+      form.classList.remove('error', 'sent');
+      form.classList.add('loading');
+      
+      try {
+        const formData = new FormData(form);
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        if (response.ok) {
+          form.classList.remove('loading');
+          form.classList.add('sent');
+          form.reset();
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (error) {
+        form.classList.remove('loading');
+        form.classList.add('error');
+      }
+    });
+  });
+});
