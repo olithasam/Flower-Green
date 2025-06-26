@@ -76,57 +76,7 @@ h6 {
   font-family: var(--heading-font);
 }
 
-/* PHP Email Form Messages
-------------------------------*/
-.php-email-form .error-message {
-  display: none;
-  background: #df1529;
-  color: #ffffff;
-  text-align: left;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
 
-.php-email-form .sent-message {
-  display: none;
-  color: #ffffff;
-  background: #059652;
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
-
-.php-email-form .loading {
-  display: none;
-  background: var(--surface-color);
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-}
-
-.php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid var(--accent-color);
-  border-top-color: var(--surface-color);
-  animation: php-email-form-loading 1s linear infinite;
-}
-
-@keyframes php-email-form-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 /*--------------------------------------------------------------
 # Global Header
@@ -140,6 +90,13 @@ h6 {
   z-index: 997;
 }
 
+.header.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
 
 .header .header-social-links {
   padding-right: 15px;
@@ -194,6 +151,7 @@ h6 {
 
   .navmenu li {
     position: relative;
+    background-color: transparent;
   }
 
   .navmenu a,
@@ -252,7 +210,7 @@ h6 {
     padding: 10px 20px;
     font-size: 15px;
     text-transform: none;
-    color: var(--nav-dropdown-color);
+    color: rgb(83, 83, 83);
   }
 
   .navmenu .dropdown ul a i {
@@ -411,6 +369,186 @@ h6 {
     display: block;
   }
 }
+
+
+/*--------------------------------------------------------------
+# Global Header 2
+--------------------------------------------------------------*/
+/* For Desktop - Transparent Navmenu */
+@media (min-width: 1200px) {
+  .index-page .header:not(.scrolled) .navmenu {
+    background-color: transparent !important;
+  }
+  
+  .index-page .header:not(.scrolled) .navmenu ul {
+    background-color: transparent !important;
+  }
+  
+  /* Keep dropdown menus solid */
+  .index-page .header:not(.scrolled) .navmenu .dropdown ul {
+    background: var(--nav-dropdown-background-color) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* For Mobile - Keep mobile menu dark */
+@media (max-width: 1199px) {
+  .index-page .header:not(.scrolled) .navmenu ul {
+    background-color: rgba(255, 253, 253, 0.9) !important;
+  }
+}
+
+.index-page .header {
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  z-index: 997;
+  transition: all 0.5s ease;
+}
+
+/* Scrolled state */
+.index-page .header.scrolled {
+  background-color: #e2dede !important;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  position: fixed;
+}
+
+/* Header text colors when transparent */
+.index-page .header:not(.scrolled) .navmenu a,
+.index-page .header:not(.scrolled) .header-social-links a,
+.index-page .header:not(.scrolled) .mobile-nav-toggle {
+  color: rgb(255, 252, 252);
+}
+
+/* Dropdown menu text color */
+.index-page .header:not(.scrolled) .navmenu .dropdown ul li a {
+  color: #040404 !important;
+}
+
+.index-page .header:not(.scrolled) .navmenu a:hover,
+.index-page .header:not(.scrolled) .navmenu .active {
+  color: #ffcc00;
+}
+
+/* Dropdown menu hover effect - green background */
+.index-page .header:not(.scrolled) .navmenu .dropdown ul li a:hover {
+  
+  color: #ffcc00 !important; /* Optional: change text to white on hover */
+}
+
+/* Mobile menu background when transparent */
+.index-page .header:not(.scrolled) .navmenu ul {
+  background-color: rgba(227, 227, 227, 0.9);
+}
+
+/* Active state for dropdown items */
+.navmenu .dropdown ul li a.active {
+  color: #28a745 !important;
+  
+  
+}
+
+/* For Desktop - Transparent Navmenu for about*/
+@media (min-width: 1200px) {
+  .about-page .header:not(.scrolled) .navmenu {
+    background-color: transparent !important;
+  }
+  
+  .about-page .header:not(.scrolled) .navmenu ul {
+    background-color: transparent !important;
+  }
+  
+  /* Keep dropdown menus solid */
+  .about-page .header:not(.scrolled) .navmenu .dropdown ul {
+    background: var(--nav-dropdown-background-color) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* For Mobile - Keep mobile menu dark */
+@media (max-width: 1199px) {
+  .about-page .header:not(.scrolled) .navmenu ul {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+  }
+}
+
+.about-page .header {
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  z-index: 997;
+  transition: all 0.5s ease;
+}
+
+/* Scrolled state */
+.about-page .header.scrolled {
+  background-color: #32CD32 !important;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  position: fixed;
+}
+
+/* Header text colors when transparent */
+.about-page .header:not(.scrolled) .navmenu a,
+.about-page .header:not(.scrolled) .header-social-links a,
+.about-page .header:not(.scrolled) .mobile-nav-toggle {
+  color: rgb(255, 255, 255);
+}
+
+.about-page .header:not(.scrolled) .navmenu a:hover,
+.about-page .header:not(.scrolled) .navmenu .active {
+  color: rgba(6, 183, 0, 0.8);
+}
+
+/* Mobile menu background when transparent */
+.about-page .header:not(.scrolled) .navmenu ul {
+  background-color: rgba(227, 227, 227, 0.9);
+}
+
+/*--------------------------------------------------------------
+# hero Section
+--------------------------------------------------------------*/
+.hero-cover {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  z-index: 1;
+  margin-top: 0; 
+}
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  object-fit: cover;
+  will-change: transform;
+  transition: transform 0.3s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .hero-cover {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-cover {
+    height: 40vh;
+  }
+  
+  .index-page .header:not(.scrolled) .navmenu a {
+    color: #333; /* Dark text for mobile menu items */
+  }
+  .about-page .header:not(.scrolled) .navmenu a {
+    color: #333; /* Dark text for mobile menu items */
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Global Footer
@@ -683,54 +821,11 @@ section,
   padding-bottom: 2px;
 }
 
-/*--------------------------------------------------------------
-# hero Section
---------------------------------------------------------------*/
-/* Hero Cover Section */
-.hero-cover {
-  position: relative;
-  height: 60vh; /* Adjust height as needed */
-  width: 100%;
-  overflow: hidden;
-  z-index: 1;
-  background: transparent;
-}
 
-.hero-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;  
-  background-position: center;
-  background-repeat: no-repeat;  
-  image-rendering: -webkit-optimize-contrast;
-  will-change: transform;
-  
-  background-size: contain; /* Shows entire image without cropping */
-  
-}
-/* Hide on scroll - add this class with JavaScript */
-.hero-cover.hide-on-scroll .hero-image {
-  transform: translateY(-100%);
-  opacity: 0;
-}
-@media (max-width: 992px) {
-  .hero-cover {
-    height: 50vh;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-cover {
-    height: 40vh;
-  }
-}
 
 /*--------------------------------------------------------------
-# Home Content Section - Minimal Style
+# Home Content Section 
 --------------------------------------------------------------*/
-/* Home Content Section - with product images */
 .homeContent {
   padding: 60px 0;
   background-color: #fff;
@@ -821,7 +916,7 @@ section,
 
 .product-item img {
   width: 100%;
-  height: 150px;
+  height: 200px;
   object-fit: cover;
   border-bottom: 1px solid #eee;
 }
@@ -830,7 +925,15 @@ section,
   padding: 15px 10px;
   font-weight: 600;
   color: #2c541d;
+  margin: 0;
 }
+.product-item a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+
 
 .mission-statement {
   font-size: 19px;
@@ -883,15 +986,27 @@ section,
 .about .content h3 {
   font-size: 2rem;
   font-weight: 700;
+  font-family: var(--heading-font);
 }
 
+.about .content p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  line-height: 1.6;
+  text-align: justify;
+}
+.about .content ul{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
 .about .content ul {
   list-style: none;
   padding: 0;
+  margin-left: 20px; /* Increased left margin for indentation */
 }
 
 .about .content ul li {
   padding-bottom: 10px;
+  position: relative;
+  padding-left: 25px; /* Added padding for custom bullet */
 }
 
 .about .content ul i {
@@ -926,19 +1041,16 @@ section,
   transition: 0.3s;
 }
 
-.about .content .read-more:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-  padding-right: 19px;
-}
-
-.about .content .read-more:hover i {
-  margin-left: 10px;
-}
-
 .about .about-images img {
+  max-width: 80%; /* Adjust as needed */
+  height: auto;
   border-radius: 10px;
 }
-
+.about .about-images {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center;    /* Vertical centering */
+}
 /*--------------------------------------------------------------
 # Blog Details Section faq
 --------------------------------------------------------------*/
@@ -1098,7 +1210,7 @@ section,
 }
 
 .contact .info-item i {
-  color: #fff;
+  color: #ffffff;
   background: var(--accent-color);
   font-size: 20px;
   width: 44px;
@@ -1128,7 +1240,7 @@ section,
 
 /* Form Container */
 .contact .form-container {
-  background: #fff;
+  background: #F2F2F2;
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -1163,14 +1275,14 @@ section,
 
 .contact .formspree-form .form-control {
   font-size: 14px;
-  padding: 12px 15px;
+  padding: 10px 15px;
   box-shadow: none;
   border-radius: 4px;
   transition: all 0.3s;
   color: #333;
-  background-color: #fff;
+  background-color: #ffffff;
   border: 1px solid #ddd;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
 }
 
 .contact .formspree-form .form-control:focus {

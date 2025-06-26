@@ -149,3 +149,27 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.getElementById('header');
+  const heroSection = document.querySelector('.hero-cover');
+  
+  // Only apply scroll effect on homepage
+  if (document.body.classList.contains('index-page')) {
+    const heroHeight = heroSection.offsetHeight;
+    const scrollThreshold = heroHeight * 0.3; // Start transition at 30% of hero height
+    
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > scrollThreshold) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Initialize on page load
+    if (window.scrollY > scrollThreshold) {
+      header.classList.add('scrolled');
+    }
+  }
+});
