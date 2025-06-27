@@ -69,9 +69,28 @@
   <main class="main">
 
   <!-- Hero Cover Section -->
-    <section id="hero-cover" class="hero-cover section dark-background">
-      <div class="hero-image" style="background-image: url('assets/img/sample7777.jpg');"></div>
-    </section>  
+   <section class="hero-cover">
+      <picture>
+        <!-- Mobile Image (shows on screens up to 768px) -->
+        <source 
+          media="(max-width: 768px)" 
+          srcset="assets/img/cover/mobile1/faqmobile1.jpg">
+
+        <source 
+          media="(max-width: 991px)" 
+          srcset="assets/img/cover/mobile2/faqmobile2.jpg">
+
+        <source 
+          media="(max-width: 1400px)" 
+          srcset="assets/img/cover/mobile3/faqmobile3.jpg">
+        
+        <!-- Default/Desktop Image -->
+        <img 
+          class="hero-image" 
+          src="assets/img/cover/faqcover.jpg" 
+          alt="Hero Image">
+      </picture>
+    </section> 
 
     <!-- Page Title -->
     <div class="page-title">
@@ -225,7 +244,7 @@
           <div class="footer-contact pt-3">
             <p>Flower Green (Pvt) Limited</p>
             <p>Colombo 04, Sri Lanka</p>
-            <p><strong>Email:</strong> <span> flower.green.lanka@gmail.com</span></p>
+            <p><strong>Email:</strong> <span> flower.green.ex@gmail.com</span></p>
           </div>
           <div class="social-links d-flex mt-4">
             <a href="https://www.facebook.com/flowergreenex"><i class="bi bi-facebook"></i></a>

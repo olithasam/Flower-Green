@@ -66,8 +66,27 @@
   <main class="main">
 
     <!-- Hero Cover Section -->
-    <section id="hero-cover" class="hero-cover section dark-background">
-      <div class="hero-image" style="background-image: url('assets/img/sample7777.jpg');"></div>
+    <section class="hero-cover">
+      <picture>
+        <!-- Mobile Image (shows on screens up to 768px) -->
+        <source 
+          media="(max-width: 768px)" 
+          srcset="assets/img/cover/mobile1/othermobile1.jpg">
+
+        <source 
+          media="(max-width: 991px)" 
+          srcset="assets/img/cover/mobile2/othermobile2.jpg">
+
+        <source 
+          media="(max-width: 1400px)" 
+          srcset="assets/img/cover/mobile3/othermobile3.jpg">
+        
+        <!-- Default/Desktop Image -->
+        <img 
+          class="hero-image" 
+          src="assets/img/cover/otherproductscover.jpg" 
+          alt="Hero Image">
+      </picture>
     </section>  
 
     <!-- Page Title -->
@@ -106,6 +125,9 @@
       </div>      
     </section><!-- Section 1-->
 
+    <!-- Divider between sections -->
+    <hr style="margin: 10px auto; width: 80%; border: 0; border-top: 2px solid #000000;">
+
     <!-- Section 2-->
     <section id="about" class="about section">
       <div class="container">
@@ -126,6 +148,9 @@
         </div>        
       </div>      
     </section><!-- Section 2-->
+
+    <!-- Divider between sections -->
+    <hr style="margin: 10px auto; width: 80%; border: 0; border-top: 2px solid #000000;">
 
     <!-- Section 3-->
     <section id="about" class="about section">
@@ -152,6 +177,9 @@
         </div>        
       </div>      
     </section><!-- Section 3-->
+
+    <!-- Divider between sections -->
+    <hr style="margin: 10px auto; width: 80%; border: 0; border-top: 2px solid #000000;">
 
     <!-- Section 4-->
     <section id="about" class="about section">
@@ -187,6 +215,9 @@
       </div>      
     </section><!-- Section 4-->
 
+    <!-- Divider between sections -->
+    <hr style="margin: 10px auto; width: 80%; border: 0; border-top: 2px solid #000000;">
+
     <!-- Section 5-->
     <section id="about" class="about section">
       <div class="container">
@@ -205,6 +236,9 @@
       </div>      
     </section><!-- Section 5-->
 
+    <!-- Divider between sections -->
+    <hr style="margin: 10px auto; width: 80%; border: 0; border-top: 2px solid #000000;">
+
     <!-- Section 6-->
     <section id="about" class="about section">
       <div class="container">
@@ -222,6 +256,9 @@
         </div>        
       </div>      
     </section><!-- Section 6-->
+
+    <!-- Divider between sections -->
+    <hr style="margin: 10px auto; width: 80%; border: 0; border-top: 2px solid #000000;">
 
     <!-- Section 7-->
     <section id="about" class="about section">
@@ -258,7 +295,7 @@
           <div class="footer-contact pt-3">
             <p>Flower Green (Pvt) Limited</p>
             <p>Colombo 04, Sri Lanka</p>
-            <p><strong>Email:</strong> <span> flower.green.lanka@gmail.com</span></p>
+            <p><strong>Email:</strong> <span> flower.green.ex@gmail.com</span></p>
           </div>
           <div class="social-links d-flex mt-4">
             <a href="https://www.facebook.com/flowergreenex"><i class="bi bi-facebook"></i></a>
